@@ -48,12 +48,12 @@ function BlacHawkGroup() {
       members: [
         {
           update_existing: true,
-          email_address: contact.email,
+          email_address: contact.email ? contact.email : " ",
           status: "subscribed",
           merge_fields: {
-            FNAME: contact.firstname,
-            LNAME: contact.lastname,
-            PHONE: contact.phone,
+            FNAME: contact.firstname ? contact.firstname : " ",
+            LNAME: contact.lastname ? contact.lastname : " ",
+            PHONE: contact.phone ? contact.phone : " ",
           },
           tags: [contact.tags ? contact.tags : "HUBSPOT_CONTACT"],
         },
